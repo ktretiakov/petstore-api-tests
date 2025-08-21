@@ -1,0 +1,29 @@
+userApiExpectedData: &baseApiData
+  id: 1
+  username: "TEST_USERNAME_1"
+  firstName: "TEST_NAME_1"
+  lastName: "TEST_LAST_NAME_1"
+  email: "test@gmail.com"
+  password: "qwerty123"
+  phone: "0999999"
+  userStatus: 1
+
+userApiUpdatedData:
+  <<: *baseApiData
+  username: "TEST_USERNAME_2"
+  firstName: "TEST_NAME_2"
+  lastName: "TEST_LAST_NAME_2"
+  email: "test@gmail.com"
+  password: "qwerty1234"
+  phone: "0999999"
+  userStatus: 1
+
+userApiInvalidCreateData:
+  <<: *baseApiData
+  username: "29008128"
+  firstName: ""
+  lastName: ""
+  email: "test@gmail.com"
+  password: "0"
+  phone: ""
+  userStatus: -1
