@@ -1,5 +1,4 @@
-# Petstore API Test Framework
-
+# Petstore API Test
 ## 📌 Overview
 This is a lightweight API test automation framework built on top of:
 - **Java 17**
