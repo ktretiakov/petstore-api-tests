@@ -41,7 +41,7 @@ petstore-api-tests
 ## 🚀 How to Run Tests
 1. **Clone the repository**:
    ```bash
-   git clone [petstore=api-tests](https://github.com/ktretiakov/petstore-api-tests.git)
+   git clone https://github.com/ktretiakov/petstore-api-tests.git
    cd petstore-api-tests
 
 2. **🧪 Running Tests**:
