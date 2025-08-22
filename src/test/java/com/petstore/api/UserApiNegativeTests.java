@@ -1,8 +1,8 @@
 package com.petstore.api;
 
 import com.petstore.api.core.listeners.AllureListener;
-import com.petstore.api.fixture.datayamlloader.classes.user.UserData;
-import com.petstore.api.handlers.UserConfig;
+import com.petstore.api.objects.datayamlloader.classes.user.UserData;
+import com.petstore.api.requests.UserConfig;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
@@ -18,10 +18,10 @@ import org.testng.annotations.Test;
 
 import java.lang.reflect.Method;
 
-import static com.petstore.api.fixture.datayamlloader.classes.user.UserDataTypes.USER_API_EXPECTED_DATA;
-import static com.petstore.api.fixture.datayamlloader.classes.user.UserDataTypes.USER_API_INVALID_CREATE_DATA;
-import static com.petstore.api.fixture.datayamlloader.classes.user.UserDataTypes.USER_API_UPDATED_DATA;
-import static com.petstore.api.fixture.datayamlloader.classes.user.UserDataTypes.USER_USERNAME;
+import static com.petstore.api.objects.datayamlloader.classes.user.UserDataTypes.USER_API_EXPECTED_DATA;
+import static com.petstore.api.objects.datayamlloader.classes.user.UserDataTypes.USER_API_INVALID_CREATE_DATA;
+import static com.petstore.api.objects.datayamlloader.classes.user.UserDataTypes.USER_API_UPDATED_DATA;
+import static com.petstore.api.objects.datayamlloader.classes.user.UserDataTypes.USER_USERNAME;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
@@ -58,7 +58,7 @@ public class UserApiNegativeTests {
   }
 
   @AfterMethod
-  public void deleteLoadCarrierMaster(Method method) {
+  public void deleteTestUser(Method method) {
     userConfig.deleteUserAccountFromPetStoreByUserName(username);
   }
 

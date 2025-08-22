@@ -1,8 +1,8 @@
 package com.petstore.api;
 
 import com.petstore.api.core.listeners.AllureListener;
-import com.petstore.api.fixture.datayamlloader.classes.user.UserData;
-import com.petstore.api.handlers.UserConfig;
+import com.petstore.api.objects.datayamlloader.classes.user.UserData;
+import com.petstore.api.requests.UserConfig;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
@@ -17,11 +17,11 @@ import org.testng.annotations.Test;
 
 import java.lang.reflect.Method;
 
-import static com.petstore.api.fixture.datayamlloader.classes.user.UserDataTypes.USER_API_EXPECTED_DATA;
-import static com.petstore.api.fixture.datayamlloader.classes.user.UserDataTypes.USER_API_UPDATED_DATA;
-import static com.petstore.api.fixture.datayamlloader.classes.user.UserDataTypes.USER_FIRST_NAME;
-import static com.petstore.api.fixture.datayamlloader.classes.user.UserDataTypes.USER_USERNAME;
-import static com.petstore.api.fixture.jsonschemasdata.JsonSchemasConstData.SCHEMA_POST_USER;
+import static com.petstore.api.constants.JsonSchemasConstData.SCHEMA_POST_USER;
+import static com.petstore.api.objects.datayamlloader.classes.user.UserDataTypes.USER_API_EXPECTED_DATA;
+import static com.petstore.api.objects.datayamlloader.classes.user.UserDataTypes.USER_API_UPDATED_DATA;
+import static com.petstore.api.objects.datayamlloader.classes.user.UserDataTypes.USER_FIRST_NAME;
+import static com.petstore.api.objects.datayamlloader.classes.user.UserDataTypes.USER_USERNAME;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
@@ -53,7 +53,7 @@ public class UserApiPositiveTest {
   }
 
   @AfterMethod
-  public void deleteLoadCarrierMaster(Method method) {
+  public void deleteTestUser(Method method) {
     if (!method.getName().equals("userCanSuccessfullyDeleteCreatedUserInStore")) {
       userConfig.deleteUserAccountFromPetStoreByUserName(username);
     }

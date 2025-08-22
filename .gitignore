@@ -1,6 +1,3 @@
-# -----------------------------
-# Maven
-# -----------------------------
 target/
 pom.xml.tag
 pom.xml.releaseBackup
@@ -12,17 +9,13 @@ buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
 
-# -----------------------------
-# IntelliJ IDEA
-# -----------------------------
 .idea/
 *.iws
 *.iml
 *.ipr
+out/
+output/
 
-# -----------------------------
-# Eclipse
-# -----------------------------
 .apt_generated
 .classpath
 .factorypath
@@ -30,37 +23,23 @@ buildNumber.properties
 .settings
 .springBeans
 .sts4-cache
+bin/
 
-# -----------------------------
-# NetBeans
-# -----------------------------
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-/build/
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-# -----------------------------
-# VS Code
-# -----------------------------
 .vscode/
 
-# -----------------------------
-# OS-specific
-# -----------------------------
 .DS_Store
 Thumbs.db
 
-# -----------------------------
-# Allure
-# -----------------------------
 allure-results/
 allure-report/
 
-# -----------------------------
-# Logs
-# -----------------------------
 *.log
